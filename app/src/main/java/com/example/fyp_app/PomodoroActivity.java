@@ -154,7 +154,7 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
                 return true;
             case R.id.menu_home:
                 startActivity(new Intent(PomodoroActivity.this, MainActivity.class));
-//                finish();
+                finish();
                 return true;
             case R.id.menu_messages:
                 startActivity(new Intent(PomodoroActivity.this, MessagesActivity.class));

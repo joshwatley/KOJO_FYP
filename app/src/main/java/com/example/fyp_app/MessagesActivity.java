@@ -127,6 +127,10 @@ public class MessagesActivity extends AppCompatActivity implements  NavigationVi
                 startActivity(new Intent(MessagesActivity.this, MainActivity.class));
                 finish();
                 return true;
+            case R.id.menu_pomo:
+                startActivity(new Intent(MessagesActivity.this, PomodoroActivity.class));
+                finish();
+                return true;
             case R.id.menu_logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(MessagesActivity.this, LoginActivity.class));

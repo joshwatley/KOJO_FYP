@@ -227,6 +227,10 @@ public class GroupsActivity extends AppCompatActivity implements NavigationView.
                 startActivity(new Intent(GroupsActivity.this, MainActivity.class));
                 finish();
                 return true;
+            case R.id.menu_pomo:
+                startActivity(new Intent(GroupsActivity.this, PomodoroActivity.class));
+                finish();
+                return true;
             case R.id.menu_logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(GroupsActivity.this, LoginActivity.class));
