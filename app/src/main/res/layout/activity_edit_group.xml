@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".UserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+
+
+            <TextView
+                android:id="@+id/groupname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/raleway_medium"
+                android:text="Edit Group"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBarLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:textAlignment="center"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/bgchipeditmode"
+        app:chipStrokeColor="@color/white"
+        app:checkedIconVisible="false"
+        app:chipStrokeWidth="0.5dp"
+        android:textColor="@color/white"
+        android:text="Edit Mode"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:gravity="center_horizontal" />
+
+
+    <EditText
+        android:id="@+id/showgroupname"
+        android:layout_width="wrap_content"
+        android:minWidth="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chip"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:textColor="@color/white"
+        android:focusable="false"
+        android:text="THIS WILL BE THE GROUPNAME" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/EM"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showgroupname"
+        android:textColor="@color/grey"
+        android:text="group name"
+        android:layout_marginLeft="8dp"/>
+
+    <EditText
+        android:id="@+id/showgroupdesc"
+        android:layout_width="wrap_content"
+        android:minWidth="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EM"
+        android:layout_marginLeft="4dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:focusable="false"
+        android:background="@null"
+        android:text="THIS WILL BE THE GROUP DESC"/>
+
+    <TextView
+        android:id="@+id/ln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showgroupdesc"
+        android:textColor="@color/grey"
+        android:text="group description"
+        android:layout_marginLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/currentadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ln"
+        android:textColor="@color/grey"
+        android:layout_marginTop="30dp"
+        android:text="Owned by Firstname + Secondname, created 10/10/1000"
+        android:layout_marginLeft="8dp"/>
+
+
+
+    <Button
+        android:id="@+id/saveeditgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentadmin"
+        android:background="@drawable/mybutton"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway_medium"
+        android:inputType="text"
+        android:text="Save Edit"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+
+
+
+</RelativeLayout>

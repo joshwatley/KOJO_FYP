@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CreateGroupActivity"
+    android:orientation="horizontal">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/MenuStyle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/username"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:fontFamily="@font/raleway_medium"
+            android:textSize="18sp"
+            android:textColor="#fff"
+            android:text="Create a new Group"/>
+
+    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_name"
+        android:textColor="@color/white"
+        android:fontFamily="@font/raleway_medium"
+        android:layout_below="@+id/bar_layout"
+        android:background="@null"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:hint="Enter Group Name"
+        android:textColorHint="@color/white"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tgroupname"
+        android:text="group name"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_below="@id/group_name"/>
+
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_desc"
+        android:layout_below="@+id/tgroupname"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:background="@null"
+        android:hint="Enter Group Description"
+        android:textColorHint="@color/white"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Group Description"
+        android:id="@+id/tgroupdesc"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_below="@id/group_desc" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Added Users :"
+        android:textColorHint="@color/white"
+        android:id="@+id/showaddedusers"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/tgroupdesc"
+        android:layout_marginLeft="8dp" />
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/search_users"
+        android:fontFamily="@font/raleway_medium"
+        android:hint="Search..."
+        android:textColor="@color/white"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColorHint="@color/white"
+        android:layout_below="@+id/showaddedusers"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Users"
+        android:id="@+id/tgroupaddusers"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@id/search_users" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/tgroupaddusers"
+        />
+
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSave_group"
+        android:text="Save Group"
+        android:textColor="@color/white"
+        android:fontFamily="@font/raleway_medium"
+        android:background="@drawable/mybutton"
+        android:layout_below="@+id/recycler_view"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/lightblue"
+        android:textSize="12sp"
+        android:id="@+id/cancelgroup"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/btnSave_group"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

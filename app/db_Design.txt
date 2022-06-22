@@ -1,0 +1,65 @@
+Users
+    ID
+    Email
+    First name
+    Last name
+    Display Picture
+
+Groups
+    ID
+    Group Name
+    Group Desc
+    Admin User ID
+    Date Created
+
+Projects
+    ID
+    Project Name
+    Project Description
+    Date Created
+
+Tasks
+    ID
+    Task Title
+    Task Content
+    Date Created
+    Priority
+    HeaderLoc
+
+
+-- THESE ARE THE RELATION DATABASES
+
+UserGroups
+    USERID1
+        GROUPID1
+        GROUPID2
+        GROUPID3
+
+GroupsUsers
+    GROUPID1
+        USERID1
+        USERID2
+        USERID3
+
+GroupsProjects
+    GROUPID1
+        PROJECTID1
+        PROJECTID2
+
+TaskUsers
+    TASKID1
+        USERID1
+        USERID2
+    TASKID2
+        USERID3
+
+UserTasks
+    USERID1
+        TASKID1
+        TASKID2
+
+ProjectHeaders:
+    PROJECTID
+        "Header One"
+        "Header Two"
+

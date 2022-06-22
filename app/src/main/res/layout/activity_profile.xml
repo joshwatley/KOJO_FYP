@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/profile_img"
+                android:src="@drawable/androidbackground1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:layout_marginLeft="25dp"
+                android:layout_marginStart="25dp"
+                android:textSize="18sp"
+                android:textColor="#fff"
+                android:text="THIS IS A TEST OF THIS FEATURE"/>
+
+<!--        Todo: Need to add the menu burger button here-->
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_height="200dp"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/background1" />
+
+    <TextView
+        android:id="@+id/profile_editimg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Photo"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"/>
+
+    <EditText
+        android:id="@+id/profile_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:textSize="24sp"
+        android:text="Joshua"/>
+
+    <EditText
+        android:id="@+id/profile_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:textSize="24sp"
+        android:text="Watley"/>
+
+    <TextView
+        android:id="@+id/profile_dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:textSize="22sp"
+        android:text="02.11.1999"/>
+
+    <EditText
+        android:id="@+id/profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:textSize="24sp"
+        android:text="watleyjosh@gmail.com"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Switch" />
+
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+
+
+            <TextView
+                android:id="@+id/groupname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textColor="#fff"
+                android:text="REMOVE USER FROM GROUP"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBarLayout"
+        android:id="@+id/thetitle"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/raleway_medium"
+        android:text="REMOVE USERS"
+        android:textSize="30sp"
+        android:layout_marginStart="8dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Users Available to Remove:"
+        android:id="@+id/dd"
+        android:layout_below="@id/thetitle"
+        android:layout_marginLeft="8dp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/chipgroup"
+        android:layout_below="@id/dd"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chipgroup"
+        android:background="@drawable/mybutton"
+        android:textColor="@color/white"
+        android:inputType="text"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:fontFamily="@font/raleway_medium"
+        android:id="@+id/saveuserchange"
+        android:text="Save Added Users"/>
+
+
+
+
+
+</RelativeLayout>

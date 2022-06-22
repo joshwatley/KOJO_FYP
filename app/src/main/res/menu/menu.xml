@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/home"><item
+        android:id="@+id/menu_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/></group>
+    <group android:id="@+id/pom"><item
+        android:id="@+id/menu_pomo"
+        android:title="Pomodoro"
+        android:icon="@drawable/ic_message"/></group>
+    <group android:id="@+id/mes"><item
+        android:id="@+id/menu_messages"
+        android:title="Messages"
+        android:icon="@drawable/ic_message"/></group>
+    <group android:id="@+id/gr"><item
+        android:id="@+id/menu_groups"
+        android:icon="@drawable/ic_groups"
+        android:title="Groups"/></group>
+
+<!--    <item-->
+<!--        android:id="@+id/menu_settings"-->
+<!--        android:icon="@drawable/ic_settings"-->
+<!--        android:title="Settings"/>-->
+    <group android:id="@+id/log"><item
+        android:id="@+id/menu_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Log Out"/></group>
+</menu>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/top"
+    android:background="@color/background"
+    tools:context=".InMessageActivity">
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/bar_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/my_toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/background"-->
+<!--            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"-->
+<!--            app:popupTheme="@style/MenuStyle">-->
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:id="@+id/profile_img"-->
+<!--                android:clickable="true"-->
+<!--                android:src="@drawable/androidbackground1"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/username"-->
+<!--                android:layout_marginLeft="25dp"-->
+<!--                android:layout_marginStart="25dp"-->
+<!--                android:fontFamily="@font/raleway_medium"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="#fff"-->
+<!--                android:text=""/>-->
+
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:id="@+id/nomessages"
+        android:layout_alignParentTop="true"
+        android:text="There are currently no chats to display"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/send_message"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:id="@+id/send_message"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_to_send"
+            android:background="#07000000"
+            android:hint="Type a message ..."
+            android:layout_toLeftOf="@id/btn_send"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_send"
+            android:src="@drawable/ic_send"
+            android:background="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

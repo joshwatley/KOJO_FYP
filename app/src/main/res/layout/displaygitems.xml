@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:padding="10dp"     android:background="@layout/custom_curved_relative"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/g_img"
+        android:src="@drawable/ic_grouppic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GroupName"
+        android:textColor="@color/white"
+        android:fontFamily="@font/raleway_medium"
+        android:id="@+id/sgroup_name"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/g_img"
+        android:layout_toEndOf="@id/g_img"
+        android:layout_marginStart="10dp" />
+
+</RelativeLayout>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".CreateTaskActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/groupnme"
+                android:layout_marginLeft="25dp"
+                android:fontFamily="@font/raleway_medium"
+                android:layout_marginStart="25dp"
+                android:textSize="18sp"
+                android:textColor="#fff"
+                android:text="Create New Task"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar_layout"
+        android:id="@+id/taskTitle"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:hint="Enter Task Title"
+        android:textColorHint="@color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Title"
+        android:id="@+id/ttitle"
+        android:layout_below="@id/taskTitle"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="16dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ttitle"
+        android:id="@+id/taskContent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:background="@null"
+        android:hint="Enter Task Content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Content"
+        android:id="@+id/tCont"
+        android:layout_below="@id/taskContent"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/grey"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tCont"
+        android:id="@+id/taskHeading"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:background="@null"
+        android:hint="Enter Task Heading"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Heading"
+        android:id="@+id/theading"
+        android:layout_below="@id/taskHeading"
+        android:layout_marginTop="-5dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_marginLeft="16dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter Data due"
+        android:layout_marginTop="8dp"
+        android:id="@+id/tempdateentry"
+        android:layout_below="@+id/theading"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:background="@null" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tempdateentry"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Due Date"
+        android:layout_marginTop="-5dp"
+        android:id="@+id/showdatedue"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Task"
+        android:id="@+id/btnSaveTask"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:inputType="text"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/tempdateentry"
+        android:background="@drawable/mybutton"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:textColor="@color/lightblue"
+        android:textSize="12sp"
+        android:id="@+id/canceltask"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/btnSaveTask"
+        android:layout_centerHorizontal="true" />
+
+
+
+
+</RelativeLayout>

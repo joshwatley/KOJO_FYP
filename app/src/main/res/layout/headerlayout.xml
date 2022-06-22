@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="128dp" android:orientation="vertical" android:background="@color/headercolor" >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/suserpic"
+        android:layout_width="250px"
+        android:layout_height="250px"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher_round"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/edit_u"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:clickable="true"
+        android:layout_toRightOf="@id/suserpic"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_below="@id/susername"
+        android:src="@drawable/ic_mode_edit" />
+
+    <TextView
+        android:id="@+id/susername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/raleway_medium"
+        android:layout_marginLeft="16dp"
+        android:textSize="24sp"
+        android:layout_toRightOf="@id/suserpic"
+        android:text="This will be users name"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/semail"
+        android:layout_below="@id/susername"
+        android:layout_toRightOf="@id/suserpic"
+        android:textSize="12sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="5dp"
+        android:text="This is the email"/>
+
+
+
+
+
+</RelativeLayout>

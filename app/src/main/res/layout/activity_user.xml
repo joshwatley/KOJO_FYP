@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/MenuStyle">
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/profile_img"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:src="@drawable/androidbackground1" />-->
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginLeft="25dp"
+                android:textColor="#fff"
+                android:fontFamily="@font/raleway_medium"
+                android:textSize="18sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/showprofileimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appBarLayout"
+        android:background="@layout/curvedheaderrelative">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/showprofileimage1"
+        android:layout_width="190dp"
+        android:layout_height="200dp"
+        app:civ_border_width="2dp"
+        android:clickable="false"
+        android:layout_centerInParent="true"
+        app:civ_border_color="#fff"
+        android:src="@drawable/androidbackground1" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/edit_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:clickable="true"
+        android:layout_toRightOf="@id/showprofileimage1"
+        android:layout_marginTop="140dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/grey"
+        android:layout_marginLeft="-50dp"
+        android:src="@drawable/ic_mode_edit" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showprofileimage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:checkable="true"
+        android:layout_marginLeft="5dp"
+        android:textAlignment="center"
+        android:layout_marginRight="5dp"
+        app:chipBackgroundColor="@color/bgchipeditmode"
+        app:chipStrokeColor="@color/white"
+        app:checkedIconVisible="false"
+        app:chipStrokeWidth="0.5dp"
+        android:textColor="@color/white"
+        android:text="Edit Mode"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        android:gravity="center_horizontal" />
+
+
+    <EditText
+        android:id="@+id/showfirstname"
+        android:layout_width="wrap_content"
+        android:minWidth="50dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chip"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:focusable="false"
+        android:text="THIS WILL BE THE FIRSTNAME" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/fn"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/raleway_medium"
+        android:layout_below="@id/showfirstname"
+        android:text="firstname"
+        android:layout_marginLeft="8dp"/>
+
+    <EditText
+        android:id="@+id/showlastname"
+        android:layout_width="wrap_content"
+        android:minWidth="50dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fn"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:focusable="false"
+        android:background="@null"
+        android:text="THIS WILL BE THE LASTNAME"/>
+
+    <TextView
+        android:id="@+id/ln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_below="@id/showlastname"
+        android:text="lastname"
+        android:layout_marginLeft="8dp"/>
+
+    <EditText
+        android:id="@+id/showemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ln"
+        android:layout_marginLeft="4dp"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:focusable="false"
+        android:background="@null"
+        android:text="THIS WILL BE THE EMAIL"/>
+
+    <TextView
+        android:id="@+id/em"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/grey"
+        android:layout_below="@id/showemail"
+        android:text="email"
+        android:layout_marginLeft="8dp"/>
+
+    <Button
+        android:id="@+id/saveedituser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/em"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="@color/white"
+        android:inputType="text"
+        android:background="@drawable/mybutton"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:text="Save Edit"
+        android:visibility="invisible" />
+
+
+
+</RelativeLayout>
