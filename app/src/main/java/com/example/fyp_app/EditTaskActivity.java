@@ -430,9 +430,6 @@ public class EditTaskActivity extends AppCompatActivity {
                     });
 
                     Toast.makeText(EditTaskActivity.this, "TASK DELETED", Toast.LENGTH_SHORT).show();
-//                    Intent intent1 = new Intent(EditTaskActivity.this, InsideGroupActivity.class);
-//                    intent1.putExtra("id", parentGroup);
-//                    startActivity(intent1);
                     finish();
                 });
 
@@ -440,10 +437,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 (dialog, which) -> {
                     // cancel and go back
                     Toast.makeText(EditTaskActivity.this, "TASK DELETION CANCELED", Toast.LENGTH_SHORT).show();
-
-//                    Intent intent1 = new Intent(EditTaskActivity.this, InsideGroupActivity.class);
-//                    intent1.putExtra("id", parentGroup);
-//                    startActivity(intent1);
                     finish();
 
                 });

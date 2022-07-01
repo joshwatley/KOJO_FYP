@@ -11,6 +11,10 @@
         android:title="Add Task"
         android:icon="@drawable/ic_message"/>
     <item
+        android:id="@+id/menu_upload_file"
+        android:title="Upload File"
+        android:icon="@drawable/ic_message"/>
+    <item
         android:id="@+id/menu_addusers"
         android:icon="@drawable/ic_yourtasks"
         android:title="Add Users"/>

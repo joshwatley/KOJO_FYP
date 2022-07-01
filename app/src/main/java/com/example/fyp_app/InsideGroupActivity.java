@@ -12,10 +12,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.renderscript.Sampler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +50,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class InsideGroupActivity extends AppCompatActivity {
 
+    private static final int READ_REQUEST_CODE = 0;
     Toolbar toolbar;
     TextView inGroupName;
     private FirebaseUser firebaseUser;
@@ -170,6 +173,16 @@ public class InsideGroupActivity extends AppCompatActivity {
         return true;
     }
 
+    private void selectFile(){
+        Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
+        fileintent.setType("gagt/sdf");
+        try {
+            startActivityForResult(fileintent, READ_REQUEST_CODE);
+        } catch (ActivityNotFoundException e) {
+            Log.e("tag", "No activity can handle picking a file. Showing alternatives.");
+        }
+    }
+
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.menu_addtask:
@@ -178,6 +191,10 @@ public class InsideGroupActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 return true;
+            case R.id.menu_upload_file:
+                // open file uploader
+                    selectFile();
+                    return true;
             case R.id.menu_leavegroup:
                 // if you are the admin of the group
                 if(firebaseUser.getUid().equals(incurrentGroup.getAdmin_ID())){

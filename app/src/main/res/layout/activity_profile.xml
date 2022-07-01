@@ -65,7 +65,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:textSize="24sp"
-        android:text="Joshua"/>
+        android:text="Kojo"/>
 
     <EditText
         android:id="@+id/profile_lastname"
@@ -74,7 +74,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:textSize="24sp"
-        android:text="Watley"/>
+        android:text="O"/>
 
     <TextView
         android:id="@+id/profile_dob"
@@ -92,7 +92,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
         android:textSize="24sp"
-        android:text="watleyjosh@gmail.com"/>
+        android:text="kojotest@gmail.com"/>
 
     <Switch
         android:id="@+id/switch1"

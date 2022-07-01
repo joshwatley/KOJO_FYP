@@ -5,6 +5,8 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5815768930523029" />
         <entry key="app/src/main/res/layout/activity_pomodoro.xml" value="0.44921552436003304" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/menu/groupmenu.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.5510711669921875" />
         <entry key="app/src/main/res/menu/menu2.xml" value="0.1328125" />
