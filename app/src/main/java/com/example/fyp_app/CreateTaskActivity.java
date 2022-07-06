@@ -1,27 +1,21 @@
 package com.example.fyp_app;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.fyp_app.Models.Groups;
+import com.example.fyp_app.Models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -41,16 +35,18 @@ public class CreateTaskActivity extends AppCompatActivity {
 
 
     Intent intent;
-
-    private FirebaseUser fuser;
-
     String currentGroupID;
 
     Groups currentGroup;
+    User user;
     DatabaseReference reference;
+    DatabaseReference reference3;
+
     DatabaseReference ref;
 
     DatabaseReference blankreference;
+
+    FirebaseUser firebaseUser;
 
     FirebaseDatabase fbinstance;
     DatabaseReference reference2;
@@ -63,40 +59,39 @@ public class CreateTaskActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.my_toolbar);
         groupnme = findViewById(R.id.groupnme);
-        ttitle = findViewById(R.id.taskTitle);
-        tcontent = findViewById(R.id.taskContent);
+        ttitle = findViewById(R.id.fileTitle);
+        tcontent = findViewById(R.id.fileLink);
         theading = findViewById(R.id.taskHeading);
         tduedate = findViewById(R.id.tempdateentry);
-        savetask = findViewById(R.id.btnSaveTask);
-        cancel = findViewById(R.id.canceltask);
+        savetask = findViewById(R.id.btnSaveFile);
+        cancel = findViewById(R.id.cancelfile);
 
-        intent = getIntent();
-        currentGroupID = intent.getStringExtra("id");
+//        intent = getIntent();
+//        currentGroupID = intent.getStringExtra("id");
 
         //getting the current group data
 
-        reference2 = FirebaseDatabase.getInstance().getReference("Groups").child(currentGroupID);
-        reference2.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                currentGroup = snapshot.getValue(Groups.class);
-                groupnme.setText("New Task for " + currentGroup.getName());
-            }
+//        reference2 = FirebaseDatabase.getInstance().getReference("Groups").child(currentGroupID);
+//        reference2.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                currentGroup = snapshot.getValue(Groups.class);
+////                groupnme.setText("New Task for " + currentGroup.getName());
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-        fuser = FirebaseAuth.getInstance().getCurrentUser();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> {
-            Intent i = new Intent(CreateTaskActivity.this, InsideGroupActivity.class);
-            i.putExtra("id", currentGroupID);
+            startActivity(new Intent(CreateTaskActivity.this, MainActivity.class));
             finish();
         });
 
@@ -144,7 +139,7 @@ public class CreateTaskActivity extends AppCompatActivity {
         hashMap.put("priority", "0");
         hashMap.put("header", theading.getText().toString());
         hashMap.put("date_due", tduedate.getText().toString());
-        hashMap.put("userid", "none");
+        hashMap.put("userid", firebaseUser.getUid());
 
         blankreference = reference;
         ref = blankreference.push();
@@ -152,17 +147,30 @@ public class CreateTaskActivity extends AppCompatActivity {
         hashMap.put("task_id", pTaskID);
         ref.setValue(hashMap);
 
-        // this will add the task to the current group
+        // this will add the task to the current user
+        // get user details
 
+//        reference3 = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+//
+//        reference3.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                user = dataSnapshot.getValue(User.class);
+//                System.out.println(user.email);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
-        reference = FirebaseDatabase.getInstance().getReference();
-
-        HashMap<String, Object> hashMap1 = new HashMap<>();
-        hashMap1.put("groupid", currentGroupID);
-        hashMap1.put("taskid", pTaskID);
-        hashMap1.put("userid", "none");
-
-        reference.child("TaskGroups").push().setValue(hashMap1);
+//        HashMap<String, Object> hashMap1 = new HashMap<>();
+//        hashMap1.put("groupid", 0);
+//        hashMap1.put("taskid", pTaskID);
+////        hashMap1.put("userid", user.getId());
+//
+//        reference.child("TaskGroups").push().setValue(hashMap1);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(CreateTaskActivity.this);
         builder.setCancelable(true);
@@ -170,9 +178,7 @@ public class CreateTaskActivity extends AppCompatActivity {
         builder.setMessage("Task Created!");
         builder.setPositiveButton("Continue",
                 (dialog, which) -> {
-                    Intent intent = new Intent(CreateTaskActivity.this, InsideGroupActivity.class);
-                    intent.putExtra("id", currentGroupID);
-                    startActivity(intent);
+                    startActivity(new Intent(CreateTaskActivity.this, MainActivity.class));
                     finish();
                 });
 

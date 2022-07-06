@@ -17,7 +17,7 @@
     <group android:id="@+id/gr"><item
         android:id="@+id/menu_groups"
         android:icon="@drawable/ic_groups"
-        android:title="Groups"/></group>
+        android:title="Group Chat"/></group>
 
 <!--    <item-->
 <!--        android:id="@+id/menu_settings"-->

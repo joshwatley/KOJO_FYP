@@ -3,10 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5815768930523029" />
+        <entry key="app/src/main/res/layout/activity_create_file.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/activity_create_task.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/activity_edit_task.xml" value="0.3041951497395833" />
+        <entry key="app/src/main/res/layout/activity_inside_group.xml" value="0.23052536231884058" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_media_center.xml" value="0.1871292114257812" />
+        <entry key="app/src/main/res/layout/activity_new_task.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_pomodoro.xml" value="0.44921552436003304" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.24895833333333334" />
+        <entry key="app/src/main/res/layout/bar_layout.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/chat_item_left.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/chat_item_right.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/curveddone.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/displayfitems.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/displaygitems.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/displaytitems.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/displayuitems.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/fragment_tasks.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/group_chat_item_left.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/headerlayout.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/layout_chip_entry.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/menu/groupmenu.xml" value="0.1328125" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.5510711669921875" />
         <entry key="app/src/main/res/menu/menu2.xml" value="0.1328125" />

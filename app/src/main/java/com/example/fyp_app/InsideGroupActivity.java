@@ -14,24 +14,16 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fyp_app.Fragments.ChatsFragment;
 import com.example.fyp_app.Fragments.MessageBoardFragment;
-import com.example.fyp_app.Fragments.TasksFragment;
-import com.example.fyp_app.Fragments.UsersFragment;
+import com.example.fyp_app.Fragments.FilesFragment;
 import com.example.fyp_app.Models.Groups;
-import com.example.fyp_app.Models.Task;
-import com.example.fyp_app.Models.TaskGroups;
-import com.example.fyp_app.Models.User;
 import com.example.fyp_app.Models.UserGroups;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +34,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,8 +110,8 @@ public class InsideGroupActivity extends AppCompatActivity {
 
         InsideGroupActivity.ViewPagerAdapter viewPagerAdapter = new InsideGroupActivity.ViewPagerAdapter(getSupportFragmentManager());
 
-        viewPagerAdapter.addFragment(new TasksFragment(), "Tasks");
-        viewPagerAdapter.addFragment(new MessageBoardFragment(), "Messageboard");
+        viewPagerAdapter.addFragment(new FilesFragment(), "Files");
+        viewPagerAdapter.addFragment(new MessageBoardFragment(), "Group Chat");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -176,6 +167,7 @@ public class InsideGroupActivity extends AppCompatActivity {
     private void selectFile(){
         Intent fileintent = new Intent(Intent.ACTION_GET_CONTENT);
         fileintent.setType("gagt/sdf");
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
         try {
             startActivityForResult(fileintent, READ_REQUEST_CODE);
         } catch (ActivityNotFoundException e) {
@@ -191,10 +183,13 @@ public class InsideGroupActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 return true;
-            case R.id.menu_upload_file:
+            case R.id.menu_media_center:
                 // open file uploader
-                    selectFile();
-                    return true;
+                Intent intent2 = new Intent(InsideGroupActivity.this, CreateFileActivity.class);
+                intent2.putExtra("id", group_id);
+                startActivity(intent2);
+                finish();
+                return true;
             case R.id.menu_leavegroup:
                 // if you are the admin of the group
                 if(firebaseUser.getUid().equals(incurrentGroup.getAdmin_ID())){
@@ -270,94 +265,7 @@ public class InsideGroupActivity extends AppCompatActivity {
             case R.id.menu_deletegroup:
                 //
                 if(firebaseUser.getUid().equals(incurrentGroup.getAdmin_ID())){
-//                    // if admin allow deletion otherwise no
-//                    AlertDialog.Builder builder = new AlertDialog.Builder(InsideGroupActivity.this);
-//                    builder.setCancelable(true);
-//                    builder.setTitle("Deleting Group");
-//                    builder.setMessage("Are you sure you want to delete the group?");
-//                    builder.setPositiveButton("Continue",
-//                            (dialog, which) -> {
-//                                Toast.makeText(InsideGroupActivity.this, "Group Deleted", Toast.LENGTH_SHORT).show();
-//                                DatabaseReference delref = FirebaseDatabase.getInstance().getReference("Groups").child(group_id);
-//                                delref.addListenerForSingleValueEvent(new ValueEventListener() {
-//                                    @Override
-//                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                                        // delete group
-//                                        snapshot.getRef().removeValue();
-//                                    }
-//
-//                                    @Override
-//                                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                    }
-//                                });
-//
-//                                DatabaseReference removeU = FirebaseDatabase.getInstance().getReference("UserGroups");
-//                                removeU.addValueEventListener(new ValueEventListener() {
-//                                    @Override
-//                                    public void onDataChange(@NonNull DataSnapshot snapshot1) {
-//                                        for (DataSnapshot dataSnapshot : snapshot1.getChildren()){
-//                                            UserGroups ug = dataSnapshot.getValue(UserGroups.class);
-//                                            Toast.makeText(InsideGroupActivity.this, "DOES THIS EVEN HAPPEN", Toast.LENGTH_SHORT).show();
-//                                            if (ug.getGroupid().equals(group_id)){
-//                                                // if we are talking about the group we were just in
-//                                                Toast.makeText(InsideGroupActivity.this, "Is user groups getting deleted", Toast.LENGTH_SHORT).show();
-//
-//                                                dataSnapshot.getRef().removeValue();
-//                                                // delete the reference
-//                                            }
-//                                        }
-//                                    }
-//                                    @Override
-//                                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                    }
-//                                });
-//
-//                                DatabaseReference removeT = FirebaseDatabase.getInstance().getReference("TaskGroups");
-//                                removeT.addListenerForSingleValueEvent(new ValueEventListener() {
-//                                    @Override
-//                                    public void onDataChange(@NonNull DataSnapshot snapshot3) {
-//                                        taskidstodelete.clear();
-//                                        for (DataSnapshot dataSnapshot : snapshot3.getChildren()){
-//                                            TaskGroups tg = dataSnapshot.getValue(TaskGroups.class);
-//                                            if (tg.getGroupid().equals(group_id)){
-//                                                //add the task id to schedule deletion
-//                                                taskidstodelete.add(tg.getTaskid());
-//                                                // delete the task
-//                                                dataSnapshot.getRef().removeValue();
-//                                            }
-//                                        }
-//                                        for (String id : taskidstodelete){
-//                                            delT = FirebaseDatabase.getInstance().getReference("Tasks").child(id);
-//                                            delT.addValueEventListener(new ValueEventListener() {
-//                                                @Override
-//                                                public void onDataChange(@NonNull DataSnapshot snapshot2) {
-//                                                    snapshot2.getRef().removeValue();
-//                                                    Toast.makeText(InsideGroupActivity.this, "Is tasks getting deleted", Toast.LENGTH_SHORT).show();
-//                                                }
-//                                                @Override
-//                                                public void onCancelled(@NonNull DatabaseError error) {
-//                                                }
-//                                            });
-//                                        }
-//                                    }
-//                                    @Override
-//                                    public void onCancelled(@NonNull DatabaseError error) {}
-//                                });
-//
-//                            startActivity(new Intent(InsideGroupActivity.this, MainActivity.class));
-//                            finish();
-//                            });
-//
-//                    builder.setNegativeButton("Cancel",
-//                            (dialog, which) -> {
-//                                // just close
-//                            });
-//
-//                    AlertDialog dialog = builder.create();
-//                    dialog.show();
-
+                    // del group
                 }else{
                     Toast.makeText(InsideGroupActivity.this, "You are not the admin, you cant delete this group!", Toast.LENGTH_SHORT).show();
                 }

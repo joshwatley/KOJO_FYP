@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:padding="10dp"
+    android:id="@+id/taskflagcolour"
+    android:background="@layout/custom_curved_relative"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:id="@+id/t_img"
+        android:src="@color/white"/>
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/t_head"-->
+<!--        android:text="TASK HEADING HERE"-->
+<!--        android:layout_toRightOf="@id/t_img"-->
+<!--        android:fontFamily="@font/raleway_medium"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:layout_marginTop="-5dp"-->
+<!--        android:textColor="@color/grey"-->
+<!--        android:layout_marginLeft="0dp"-->
+<!--        android:maxLines="1"-->
+<!--        />-->
+
+    <TextView
+        android:id="@+id/f_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@id/t_img"
+        android:layout_toRightOf="@id/t_img"
+        android:fontFamily="@font/raleway_medium"
+        android:text="File Title"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/t_desc"-->
+<!--        android:text="TASK DESCRIPTION HERE"-->
+<!--        android:fontFamily="@font/raleway_medium"-->
+<!--        android:layout_below="@id/f_title"-->
+<!--        android:layout_toRightOf="@id/t_img"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:textColor="@color/grey"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:maxLines="1"-->
+<!--        />-->
+
+</RelativeLayout>

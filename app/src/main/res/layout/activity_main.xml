@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout android:layout_width="match_parent"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/dlayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -37,7 +36,7 @@
                 android:clickable="true"
                 android:focusable="auto"
                 android:fontFamily="@font/raleway_medium"
-                android:text="Track"
+                android:text="Your Todo"
                 android:textColor="#fff"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -50,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/appBarLayout"
         android:textColor="@color/white"
-        android:id="@+id/notasks"
+        android:id="@+id/nofiles"
         android:text="No tasks currently assigned"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
@@ -68,9 +67,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/appBarLayout" />
+        android:layout_height="596dp"
+        android:layout_below="@id/appBarLayout"
+        android:layout_marginTop="23dp" />
 
+    <Button
+        android:id="@+id/btnNewTask"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/recycler_view"
+        android:background="@color/grey"
+        android:textColor="@color/menucolor"
+        android:layout_alignParentBottom="true"
+        android:text="Create new task" />
 </RelativeLayout>
 
 

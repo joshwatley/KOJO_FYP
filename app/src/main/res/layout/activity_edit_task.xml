@@ -24,7 +24,7 @@
             app:popupTheme="@style/MenuStyle">
 
             <TextView
-                android:id="@+id/ttitle"
+                android:id="@+id/ftitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
@@ -165,21 +165,7 @@
         android:text="task due date"
         android:layout_marginLeft="16dp"/>
 
-    <EditText
-        android:id="@+id/allocateduser"
-        android:layout_width="wrap_content"
-        android:minWidth="50dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/dd"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
-        android:focusable="false"
-        android:background="@null"
-        android:text="Allocated User: "/>
-
-<!--    <EditText-->
+    <!--    <EditText-->
 <!--        android:id="@+id/allocateduser"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -191,23 +177,7 @@
 <!--        android:text="Allocated user : " />-->
 
 
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:fontFamily="@font/raleway_medium"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:background="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/userspinner"
-        android:layout_below="@id/allocateduser"/>
-
-<!--    <Button-->
+    <!--    <Button-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:id="@+id/addusertotask"-->
@@ -240,7 +210,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/userspinner"
+        android:layout_below="@id/dd"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:focusable="false"

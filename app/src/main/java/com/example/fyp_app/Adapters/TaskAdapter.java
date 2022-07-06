@@ -3,39 +3,20 @@ package com.example.fyp_app.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fyp_app.EditTaskActivity;
-import com.example.fyp_app.InMessageActivity;
-import com.example.fyp_app.InsideGroupActivity;
-import com.example.fyp_app.Models.Chat;
-import com.example.fyp_app.Models.Groups;
 import com.example.fyp_app.Models.Task;
-import com.example.fyp_app.Models.User;
 import com.example.fyp_app.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-import java.security.acl.Group;
-import java.text.BreakIterator;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -108,7 +89,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            t_title = itemView.findViewById(R.id.t_title);
+            t_title = itemView.findViewById(R.id.f_title);
             t_desc = itemView.findViewById(R.id.t_desc);
             t_head = itemView.findViewById(R.id.t_head);
             t_img = itemView.findViewById(R.id.t_img);

@@ -4,17 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.fyp_app.Adapters.TaskAdapter;
-import com.example.fyp_app.Adapters.UserAdapter;
 import com.example.fyp_app.Models.Task;
 import com.example.fyp_app.Models.User;
 import com.google.android.material.navigation.NavigationView;
@@ -50,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     DrawerLayout drawerLayout;
 
+    Button createNewTask;
     TextView showusername;
     TextView semail;
 
@@ -67,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
-        notasks = findViewById(R.id.notasks);
+        createNewTask = findViewById(R.id.btnNewTask);
+        notasks = findViewById(R.id.nofiles);
         navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(MainActivity.this, drawerLayout, toolbar, R.string.open_navigation_menu, R.string.close_navigation_menu);
         drawerLayout.addDrawerListener(toggle);
@@ -88,6 +85,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
         });
 
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        System.out.println("test1" + firebaseUser.getUid());
+
         user_name = findViewById(R.id.user_name);
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -95,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         mTasks = new ArrayList<>();
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -123,9 +123,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         mTasks.clear();
                         for (DataSnapshot snapshot1 : snapshot.getChildren()){
                             Task task = snapshot1.getValue(Task.class);
-
-                            if (task.getUserid().equals(firebaseUser.getUid())){
-                                mTasks.add(task);
+                            System.out.println("Current Task: " + task.getUserid());
+                            System.out.println("Current User: " + firebaseUser.getUid());
+                            if (!(task.getUserid() == null)){
+                                if (task.getUserid().equals(firebaseUser.getUid())){
+                                    mTasks.add(task);
+                                }
                             }
                         }
 
@@ -148,6 +151,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+        });
+
+        createNewTask.setOnClickListener(v -> {
+            // create new task page
+            Intent intent = new Intent(MainActivity.this, CreateTaskActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 
