@@ -31,12 +31,8 @@ public class CreateFileActivity extends AppCompatActivity {
     TextView groupnme;
     EditText ftitle;
     EditText flink;
-    EditText tduedate;
-    EditText theading;
     Button saveFile;
     TextView cancel;
-
-
     Intent intent;
 
     private FirebaseUser fuser;
@@ -45,9 +41,6 @@ public class CreateFileActivity extends AppCompatActivity {
 
     Groups currentGroup;
     DatabaseReference reference;
-    DatabaseReference ref;
-
-    DatabaseReference blankreference;
 
     FirebaseDatabase fbinstance;
     DatabaseReference reference2;
@@ -62,15 +55,13 @@ public class CreateFileActivity extends AppCompatActivity {
         groupnme = findViewById(R.id.groupnme);
         ftitle = findViewById(R.id.fileTitle);
         flink = findViewById(R.id.fileLink);
-//        theading = findViewById(R.id.taskHeading);
-//        tduedate = findViewById(R.id.tempdateentry);
         saveFile = findViewById(R.id.btnSaveFile);
         cancel = findViewById(R.id.cancelfile);
 
         intent = getIntent();
         currentGroupID = intent.getStringExtra("id");
 
-        //getting the current group data
+        //getting group data
 
         reference2 = FirebaseDatabase.getInstance().getReference("Groups").child(currentGroupID);
         reference2.addValueEventListener(new ValueEventListener() {
@@ -146,25 +137,6 @@ public class CreateFileActivity extends AppCompatActivity {
 
 
         reference.push().setValue(hashMap);
-//        blankreference = reference;
-//        ref = blankreference.push();
-//        ref.setValue(hashMap);
-
-//        String pTaskID = ref.getKey();
-//        hashMap.put("task_id", pTaskID);
-//        ref.setValue(hashMap);
-//
-//        // this will add the task to the current group
-//
-//
-//        reference = FirebaseDatabase.getInstance().getReference();
-//
-//        HashMap<String, Object> hashMap1 = new HashMap<>();
-//        hashMap1.put("groupid", currentGroupID);
-//        hashMap1.put("taskid", pTaskID);
-//        hashMap1.put("userid", "none");
-//
-//        reference.child("TaskGroups").push().setValue(hashMap1);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(CreateFileActivity.this);
         builder.setCancelable(true);

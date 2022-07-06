@@ -37,9 +37,6 @@ public class EditTaskActivity extends AppCompatActivity {
     EditText datedue;
     EditText flagpriority;
     String taskpriority;
-//    Spinner userSpinner;
-//    String addedUser;
-//    EditText allocateduser;
     Boolean allowUserUpdate = false;
     Button saveedit;
     Button deleteTask;
@@ -48,15 +45,12 @@ public class EditTaskActivity extends AppCompatActivity {
     Button changeFlag;
 
     List<User> mUsers;
-    String currentUserName;
 
 
     Intent intent;
     Task openTask;
-    String parentGroup;
     FirebaseDatabase fb;
     DatabaseReference reference;
-    DatabaseReference referenceUser;
 
     DatabaseReference deltaskref;
     DatabaseReference delGroupTaskref;
@@ -74,16 +68,12 @@ public class EditTaskActivity extends AppCompatActivity {
         tcontent = findViewById(R.id.showtaskcontent);
         datecreated = findViewById(R.id.datecreated);
         taskheader = findViewById(R.id.showtaskheading);
-//        userSpinner = findViewById(R.id.userspinner);
-//        userSpinner.setEnabled(false);
         datedue  = findViewById(R.id.datedue);
         flagpriority = findViewById(R.id.trafficpos);
-//        allocateduser = findViewById(R.id.allocateduser);
         saveedit = findViewById(R.id.saveedittask);
         saveedit.setEnabled(false);
         changeFlag = findViewById(R.id.changetraffic);
         changeFlag.setEnabled(false);
-//        addUser = findViewById(R.id.addusertotask);
         deleteTask = findViewById(R.id.deletetask);
 
         toolbartitle = findViewById(R.id.ftitle);
@@ -106,55 +96,9 @@ public class EditTaskActivity extends AppCompatActivity {
                 tcontent.setText(openTask.getTask_content());
                 datecreated.setText("Task created: " + openTask.getDate_created());
 
-                // show the current USERID NAME
-//                showTU(openTask);
-
-
                 taskheader.setText(openTask.getHeader());
                 taskpriority = openTask.getPriority();
                 datedue.setText(openTask.getDate_due());
-//                addedUser = openTask.getUserid();
-
-                // load data for the user addition function
-
-//                referenceUser = FirebaseDatabase.getInstance().getReference("Users");
-//                referenceUser.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        mUsers.clear();
-//                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                            User user = dataSnapshot.getValue(User.class);
-//                            if (openTask.getUserid().equals(user.getId())){
-//                                allocateduser.setText("Allocated User: " + user.getFirstname() + " " + user.getLastname());
-//                            }
-//                            // add all the users to the list
-//                            mUsers.add(user);
-//                        }
-//                        // once all the users are in the list, now you can update the data in the spinner
-//                        ArrayAdapter<User> arrayAdapter = new ArrayAdapter<User>(EditTaskActivity.this ,android.R.layout.simple_spinner_item, mUsers);
-//                        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-////                        userSpinner.setAdapter(arrayAdapter);
-////                        userSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-////                            @Override
-////                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-////
-////                                if (allowUserUpdate){
-////                                    currentUserName = parent.getItemAtPosition(position).toString();
-////                                    allocateduser.setText("Allocated User: " + currentUserName);
-////                                }
-////                            }
-////                            @Override
-////                            public void onNothingSelected(AdapterView <?> parent) {
-////                            }
-////                        });
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
 
                 // show the flag of the task
                 switch (Integer.valueOf(taskpriority)){
@@ -168,23 +112,6 @@ public class EditTaskActivity extends AppCompatActivity {
                         flagpriority.setText("Current Flag: DONE" );
                         break;
                 }
-
-                // get the group the task belongs to so you can close the activity
-//                DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("TaskGroups");
-//                reference1.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                        for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                            TaskGroups tg = dataSnapshot.getValue(TaskGroups.class);
-//                            if (tg.getTaskid().equals(openTask.getTask_id())){
-//                                // get the group id
-//                                parentGroup = tg.getGroupid();
-//                            }
-//                        }
-//                    }
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) { }
-//                });
 
             }
             @Override
@@ -204,9 +131,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 //if edit mode is on
                 allowUserUpdate = true;
                 saveedit.setEnabled(true);
-//                userSpinner.setVisibility(View.VISIBLE);
-//                userSpinner.setEnabled(true);
-//                userSpinner.setFocusableInTouchMode(true);
                 changeFlag.setEnabled(true);
                 ttitle.setFocusableInTouchMode(true);
                 ttitle.setTypeface(null, Typeface.BOLD_ITALIC);
@@ -216,8 +140,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 taskheader.setTypeface(null, Typeface.BOLD_ITALIC);
                 datedue.setFocusableInTouchMode(true);
                 datedue.setTypeface(null, Typeface.BOLD_ITALIC);
-/*                allocateduser.setFocusableInTouchMode(true);
-                allocateduser.setTypeface(null, Typeface.BOLD_ITALIC);*/
                 flagpriority.setFocusableInTouchMode(true);
                 flagpriority.setTypeface(null, Typeface.BOLD_ITALIC);
 
@@ -228,9 +150,6 @@ public class EditTaskActivity extends AppCompatActivity {
                 setTaskInfo(openTask);
                 saveedit.setEnabled(false);
                 changeFlag.setEnabled(false);
-//                userSpinner.setEnabled(false);
-//                userSpinner.setFocusableInTouchMode(false);
-//                userSpinner.clearFocus();
                 ttitle.setFocusableInTouchMode(false);
                 ttitle.setTypeface(null, Typeface.NORMAL);
                 ttitle.clearFocus();
@@ -243,14 +162,9 @@ public class EditTaskActivity extends AppCompatActivity {
                 datedue.setFocusableInTouchMode(false);
                 datedue.setTypeface(null, Typeface.NORMAL);
                 datedue.clearFocus();
-//                allocateduser.setFocusableInTouchMode(false);
-//                allocateduser.setTypeface(null, Typeface.NORMAL);
-//                allocateduser.clearFocus();
                 flagpriority.setFocusableInTouchMode(false);
                 flagpriority.setTypeface(null, Typeface.NORMAL);
                 flagpriority.clearFocus();
-//                userSpinner.setEnabled(false);
-//                userSpinner.setFocusableInTouchMode(false);
             }
         });
 
@@ -314,10 +228,6 @@ public class EditTaskActivity extends AppCompatActivity {
 //                                        reference.child(openTask.getTask_id()).child("userid").setValue(u.getId());
                                         reference.child(openTask.getTask_id()).child("priority").setValue(taskpriority);
                                         Toast.makeText(EditTaskActivity.this, "Changes Saved", Toast.LENGTH_SHORT).show();
-//                                        Intent intent1 = new Intent(EditTaskActivity.this, InsideGroupActivity.class);
-//                                        intent1.putExtra("id", parentGroup);
-//                                        startActivity(intent1);
-//                                        finish();
                                         startActivity(new Intent(EditTaskActivity.this, MainActivity.class));
                                         finish();
 //                                    }
@@ -338,9 +248,6 @@ public class EditTaskActivity extends AppCompatActivity {
                         setTaskInfo(openTask);
                         editmode.setChecked(false);
                         saveedit.setEnabled(false);
-//                        userSpinner.setEnabled(false);
-//                        userSpinner.setFocusableInTouchMode(false);
-//                        userSpinner.clearFocus();
                         changeFlag.setEnabled(false);
                         ttitle.setFocusableInTouchMode(false);
                         ttitle.setTypeface(null, Typeface.NORMAL);
@@ -354,15 +261,9 @@ public class EditTaskActivity extends AppCompatActivity {
                         datedue.setFocusableInTouchMode(false);
                         datedue.setTypeface(null, Typeface.NORMAL);
                         datedue.clearFocus();
-//                        allocateduser.setFocusableInTouchMode(false);
-//                        allocateduser.setTypeface(null, Typeface.NORMAL);
-//                        allocateduser.clearFocus();
                         flagpriority.setFocusableInTouchMode(false);
                         flagpriority.setTypeface(null, Typeface.NORMAL);
                         flagpriority.clearFocus();
-//                        userSpinner.setEnabled(false);
-//                        userSpinner.setFocusableInTouchMode(false);
-
                     });
             AlertDialog dialog = builder.create();
             dialog.show();
@@ -445,8 +346,6 @@ public class EditTaskActivity extends AppCompatActivity {
         taskheader.setText(inTask.getHeader());
         datedue.setText(inTask.getDate_due());
         taskpriority = inTask.getPriority();
-//        addedUser = inTask.getUserid();
-//        showTU(inTask);
 
 
         switch (Integer.valueOf(taskpriority)){
@@ -463,27 +362,4 @@ public class EditTaskActivity extends AppCompatActivity {
 
     }
 
-//    public void showTU(Task inTask){
-//
-//
-//        if (inTask.getUserid().equals("none")){
-//            currentUserName = "none";
-//        }else{
-//            DatabaseReference showTU = FirebaseDatabase.getInstance().getReference("Users").child(openTask.getUserid());
-//            showTU.addValueEventListener(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                    User tu = snapshot.getValue(User.class);
-//                    currentUserName = tu.getFirstname() + " " + tu.getLastname();
-//                    allocateduser.setText("Allocated User: " + currentUserName);
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                }
-//            });
-//        }
-//
-//    }
 }

@@ -35,13 +35,9 @@ public class FilesFragment extends Fragment {
 
     private FileAdapter fileAdapter;
     private RecyclerView recyclerView;
-    private String mUserID;
     private TextView noFiles;
 
     private List<File> mFiles;
-    private List<Task> ttodo;
-    private List<Task> inpro;
-    private List<Task> done;
     private List<String> mFileIDs;
 
     private Groups currentGroup;
@@ -50,8 +46,6 @@ public class FilesFragment extends Fragment {
     FirebaseUser fuser;
     DatabaseReference reference2;
     DatabaseReference reference;
-    DatabaseReference reference3;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -107,9 +101,7 @@ public class FilesFragment extends Fragment {
 
                     }
                 }
-//                mFiles.clear();
 
-//                List<File> newList = mFiles.stream().distinct().collect(Collectors.toList());
                 System.out.println("Size of List " +mFiles.size());
                 if(mFiles.size() == 0){
                                 noFiles.setVisibility(View.VISIBLE);
@@ -118,50 +110,6 @@ public class FilesFragment extends Fragment {
                                 fileAdapter = new FileAdapter(getContext(), mFiles);
                                 recyclerView.setAdapter(fileAdapter);
                             }
-
-//                for (String taskid : mFileIDs){
-//
-//                    reference3 = FirebaseDatabase.getInstance().getReference("Tasks").child(taskid);
-//                    reference3.addValueEventListener(new ValueEventListener() {
-//                        @RequiresApi(api = Build.VERSION_CODES.N)
-//                        @Override
-//                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                            Task task2add = snapshot.getValue(Task.class);
-//
-//                            assert task2add != null;
-//                            switch (task2add.getPriority()){
-//                                case "0":
-//                                    ttodo.add(task2add);
-//                                    break;
-//                                case "1":
-//                                    inpro.add(task2add);
-//                                    break;
-//                                case "2":
-//                                    done.add(task2add);
-//                                    break;
-//                            }
-//                            mFiles.addAll(ttodo);
-//                            mFiles.addAll(inpro);
-//                            mFiles.addAll(done);
-//
-//                            List<Task> newList = mFiles.stream()
-//                                    .distinct()
-//                                    .collect(Collectors.toList());
-//
-//                            if(newList.size() == 0){
-//                                noFiles.setVisibility(View.VISIBLE);
-//                            }else {
-//                                noFiles.setVisibility(View.INVISIBLE);
-//                                taskAdapter = new TaskAdapter(getContext(), newList);
-//                                recyclerView.setAdapter(taskAdapter);
-//                            }
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancelled(@NonNull DatabaseError error) {}
-//                    });
-//                }
             }
 
             @Override

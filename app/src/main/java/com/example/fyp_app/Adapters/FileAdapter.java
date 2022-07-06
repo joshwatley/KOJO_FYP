@@ -45,29 +45,10 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final File file = files.get(position);
         holder.f_title.setText(file.getFile_title());
-//        holder.t_img.setImageResource(R.mipmap.ic_launcher);
-//        holder.t_desc.setText(task.getTask_content());
-//        holder.t_head.setText(task.getHeader());
 
-//
-//        switch (task.getPriority()){
-//            case "0":
-//                holder.flagpri.setImageResource(R.color.colorTODO);
-//                break;
-//            case "1":
-//                holder.flagpri.setImageResource(R.color.colorINPROGRESS);
-//                break;
-//            case "2":
-//                holder.flagpri.setImageResource(R.color.colorDONE);
-//                break;
-//        }
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
-                currentContext.startActivity(browserIntent);
-            }
+        holder.itemView.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
+            currentContext.startActivity(browserIntent);
         });
     }
 
@@ -87,7 +68,4 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
             f_title = itemView.findViewById(R.id.f_title);
         }
     }
-
-    // get last message
-
 }

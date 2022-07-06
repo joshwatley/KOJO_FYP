@@ -33,15 +33,7 @@ public class CreateTaskActivity extends AppCompatActivity {
     Button savetask;
     TextView cancel;
 
-
-    Intent intent;
-    String currentGroupID;
-
-    Groups currentGroup;
-    User user;
     DatabaseReference reference;
-    DatabaseReference reference3;
-
     DatabaseReference ref;
 
     DatabaseReference blankreference;
@@ -49,8 +41,6 @@ public class CreateTaskActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
 
     FirebaseDatabase fbinstance;
-    DatabaseReference reference2;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,25 +55,6 @@ public class CreateTaskActivity extends AppCompatActivity {
         tduedate = findViewById(R.id.tempdateentry);
         savetask = findViewById(R.id.btnSaveFile);
         cancel = findViewById(R.id.cancelfile);
-
-//        intent = getIntent();
-//        currentGroupID = intent.getStringExtra("id");
-
-        //getting the current group data
-
-//        reference2 = FirebaseDatabase.getInstance().getReference("Groups").child(currentGroupID);
-//        reference2.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-////                currentGroup = snapshot.getValue(Groups.class);
-////                groupnme.setText("New Task for " + currentGroup.getName());
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -146,31 +117,6 @@ public class CreateTaskActivity extends AppCompatActivity {
         String pTaskID = ref.getKey();
         hashMap.put("task_id", pTaskID);
         ref.setValue(hashMap);
-
-        // this will add the task to the current user
-        // get user details
-
-//        reference3 = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-//
-//        reference3.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                user = dataSnapshot.getValue(User.class);
-//                System.out.println(user.email);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-
-//        HashMap<String, Object> hashMap1 = new HashMap<>();
-//        hashMap1.put("groupid", 0);
-//        hashMap1.put("taskid", pTaskID);
-////        hashMap1.put("userid", user.getId());
-//
-//        reference.child("TaskGroups").push().setValue(hashMap1);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(CreateTaskActivity.this);
         builder.setCancelable(true);
