@@ -114,7 +114,16 @@ public class CreateFileActivity extends AppCompatActivity {
             flink.setError("File Link is required");
             flink.requestFocus();
             return;
+        } else if (!flink.getText().toString().startsWith("https://www.dropbox.com/")){
+            System.out.println("32 " + flink.toString().startsWith("https://www.dropbox.com/"));
+            System.out.println("32 " + "https://www.dropbox.com/");
+            System.out.println("32 " + flink.toString());
+            flink.setError("Please upload a valid dropbox link");
+            flink.requestFocus();
+            return;
         }
+        // example dropbox link https://www.dropbox.com/scl/fo/p6h1fsa10v36jgjowmw2c/h?dl=0&rlkey=kv70a88b1lk9d2lt94w4wlmb3
+
 
 
         //get date created

@@ -3,6 +3,7 @@ package com.example.fyp_app.Adapters;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,10 +65,8 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO DO WHAT HAPPENS WHEN WE CLICK LINK
-//                Intent intent = new Intent(currentContext, EditTaskActivity.class);
-//                intent.putExtra("taskid", task.getTask_id());
-//                currentContext.startActivity(intent);
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
+                currentContext.startActivity(browserIntent);
             }
         });
     }
