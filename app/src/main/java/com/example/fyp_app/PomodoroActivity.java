@@ -13,11 +13,24 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.fyp_app.Adapters.TaskAdapter;
+import com.example.fyp_app.Models.Task;
+import com.example.fyp_app.Models.User;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PomodoroActivity extends AppCompatActivity implements  NavigationView.OnNavigationItemSelectedListener{
 
@@ -27,6 +40,10 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
     TextView clock_state;
 
     Button start_stop;
+
+    FirebaseUser firebaseUser;
+    DatabaseReference reference;
+
 
     public CountDownTimer cdt = null;
 
@@ -42,6 +59,11 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
         start_stop  = findViewById(R.id.button_startstop);
         clock_state = findViewById(R.id.text_state);
 
+        TextView showusername;
+        TextView semail;
+        CircleImageView edit_u;
+
+
         toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,6 +75,45 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
         drawerLayout.addDrawerListener(toggle);
 
         toggle.syncState();
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        View headerView = navigationView.inflateHeaderView(R.layout.headerlayout);
+        CircleImageView showuserimg = headerView.findViewById(R.id.suserpic);
+        showusername = headerView.findViewById(R.id.susername);
+        semail = headerView.findViewById(R.id.semail);
+        edit_u = headerView.findViewById(R.id.edit_u);
+        edit_u.setOnClickListener(v -> {
+            Intent intent = new Intent(PomodoroActivity.this, UserActivity.class);
+            intent.putExtra("id", firebaseUser.getUid());
+            startActivity(intent);
+            finish();
+        });
+
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User user = dataSnapshot.getValue(User.class);
+
+                showusername.setText(user.getFirstname() + " " + user.getLastname());
+                semail.setText(user.getEmail());
+                if (user.getImageLoc().equals("default")){
+                    showuserimg.setImageResource(R.mipmap.ic_launcher);
+                } else{
+                    // load image from whatever
+                    Glide.with(getApplicationContext())
+                            .load(user.getImageLoc())
+                            .into(showuserimg);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         start_stop.setOnClickListener(v -> {
 //            ColorDrawable color = (ColorDrawable) start_stop.getBackground();

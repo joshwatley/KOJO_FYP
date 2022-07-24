@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/background_left.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/background_right.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_groups.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_create_file.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_create_task.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_edit_task.xml" value="0.3041951497395833" />

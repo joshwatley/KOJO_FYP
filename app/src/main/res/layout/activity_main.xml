@@ -74,9 +74,10 @@
     <Button
         android:id="@+id/btnNewTask"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
+        android:layout_margin="5dp"
         android:layout_below="@id/recycler_view"
-        android:background="@color/grey"
+        android:background = "@drawable/rounded_corners"
         android:textColor="@color/menucolor"
         android:layout_alignParentBottom="true"
         android:text="Create new task" />

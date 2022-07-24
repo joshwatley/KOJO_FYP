@@ -45,6 +45,7 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final File file = files.get(position);
         holder.f_title.setText(file.getFile_title());
+        holder.f_link.setText(file.getFile_link());
 
         holder.itemView.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
@@ -61,11 +62,13 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView f_title;
+        private TextView f_link;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             f_title = itemView.findViewById(R.id.f_title);
+            f_link = itemView.findViewById(R.id.f_link);
         }
     }
 }

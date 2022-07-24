@@ -106,9 +106,6 @@ public class CreateFileActivity extends AppCompatActivity {
             flink.requestFocus();
             return;
         } else if (!flink.getText().toString().startsWith("https://www.dropbox.com/")){
-            System.out.println("32 " + flink.toString().startsWith("https://www.dropbox.com/"));
-            System.out.println("32 " + "https://www.dropbox.com/");
-            System.out.println("32 " + flink.toString());
             flink.setError("Please upload a valid dropbox link");
             flink.requestFocus();
             return;
