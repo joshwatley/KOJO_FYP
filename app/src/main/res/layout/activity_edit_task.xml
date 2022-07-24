@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserActivity"
-    android:background="@color/background">
+    android:background="@color/lbackground">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -63,40 +63,40 @@
 
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/fn"
+        android:textColor="@color/grey"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:layout_below="@id/chip"
+        android:text="Task Title" />
 
     <EditText
         android:id="@+id/showtasktitle"
-        android:layout_width="wrap_content"
-        android:minWidth="50dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/chip"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/white"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_below="@id/fn"
         android:background="@null"
         android:focusable="false"
-        android:text="THIS WILL BE THE TASK TITLE" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/fn"
-        android:textColor="@color/grey"
         android:layout_marginTop="-5dp"
-        android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/showtasktitle"
-        android:text="task title"
-        android:layout_marginLeft="16dp"/>
+        android:minWidth="50dp"
+        android:gravity="center"
+        android:text="THIS WILL BE THE TASK TITLE"
+        android:textColor="@color/ltext" />
 
     <EditText
         android:id="@+id/showtaskcontent"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:minWidth="50dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/fn"
-        android:textColor="@color/white"
+        android:layout_below="@id/showtasktitle"
+        android:textColor="@color/ltext"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:focusable="false"
@@ -105,22 +105,24 @@
 
     <TextView
         android:id="@+id/ln"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
         android:layout_below="@id/showtaskcontent"
-        android:text="task content"
+        android:text="Task Content"
         android:layout_marginLeft="16dp"/>
 
     <EditText
         android:id="@+id/showtaskheading"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:minWidth="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ln"
-        android:textColor="@color/white"
+        android:textColor="@color/ltext"
         android:layout_marginLeft="8dp"
         android:fontFamily="@font/raleway_medium"
         android:layout_marginTop="8dp"
@@ -130,21 +132,23 @@
 
     <TextView
         android:id="@+id/he"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
         android:layout_below="@id/showtaskheading"
-        android:text="task heading"
+        android:text="Task Heading"
         android:layout_marginLeft="16dp"/>
 
     <EditText
         android:id="@+id/datedue"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:minWidth="50dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/ltext"
         android:layout_below="@id/he"
         android:fontFamily="@font/raleway_medium"
         android:layout_marginLeft="8dp"
@@ -156,13 +160,14 @@
 
     <TextView
         android:id="@+id/dd"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_below="@id/datedue"
         android:textColor="@color/grey"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
-        android:text="task due date"
+        android:text="Task Due Date"
         android:layout_marginLeft="16dp"/>
 
     <!--    <EditText-->
@@ -242,13 +247,11 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:inputType="text"
-
         android:textColor="@color/white"
         android:fontFamily="@font/raleway_medium"
         android:layout_marginTop="16dp"
         android:text="Save Edit"
-        android:background="@drawable/mybutton"
-
+        android:background="@drawable/rounded_corners"
         android:visibility="visible" />
 
     <Button

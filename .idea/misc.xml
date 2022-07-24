@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/background_left.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_right.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_groups.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/mybutton.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_create_file.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/activity_create_task.xml" value="0.24895833333333334" />
@@ -21,11 +22,13 @@
         <entry key="app/src/main/res/layout/chat_item_left.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/chat_item_right.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/curveddone.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/custom_curved_relative.xml" value="0.24895833333333334" />
         <entry key="app/src/main/res/layout/displayfitems.xml" value="0.1" />
         <entry key="app/src/main/res/layout/displaygitems.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/displaytitems.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/displayuitems.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.22407407407407406" />
+        <entry key="app/src/main/res/layout/fragment_messageboard.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_tasks.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/group_chat_item_left.xml" value="0.22407407407407406" />
         <entry key="app/src/main/res/layout/headerlayout.xml" value="0.22407407407407406" />

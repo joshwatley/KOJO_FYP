@@ -4,6 +4,7 @@
     android:layout_height="wrap_content" android:padding="10dp"
     android:id="@+id/taskflagcolour"
     android:background="@layout/custom_curved_relative"
+    android:layout_margin="3dp"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -24,7 +25,7 @@
         android:fontFamily="@font/raleway_medium"
         android:paddingTop="5dp"
         android:layout_marginTop="-5dp"
-        android:textColor="@color/grey"
+        android:textColor="@color/lsecondtext"
         android:layout_marginLeft="0dp"
         android:maxLines="1"
         />
@@ -40,7 +41,7 @@
         android:layout_toRightOf="@id/t_img"
         android:fontFamily="@font/raleway_medium"
         android:text="Task Title"
-        android:textColor="#fff"
+        android:textColor="@color/ltext"
         android:textSize="18sp" />
 
     <TextView
@@ -53,7 +54,7 @@
         android:layout_toRightOf="@id/t_img"
         android:layout_marginTop="5dp"
         android:paddingTop="5dp"
-        android:textColor="@color/grey"
+        android:textColor="@color/lsecondtext"
         android:layout_marginLeft="20dp"
         android:maxLines="1"
         />
