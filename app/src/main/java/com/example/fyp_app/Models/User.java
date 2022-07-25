@@ -54,12 +54,6 @@ public class User {
         this.imageLoc = imageLoc;
     }
 
-    /**
-     * Pay attention here, you have to override the toString method as the
-     * ArrayAdapter will reads the toString of the given object for the name
-     *
-     * @return contact_name
-     */
     @Override
     public String toString() {
         String com = firstname + " " + lastname;

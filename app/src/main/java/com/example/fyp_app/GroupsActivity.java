@@ -171,7 +171,6 @@ public class GroupsActivity extends AppCompatActivity implements NavigationView.
                         // dont repeat groupids
                         for (String s : groupIDS){
                             if (s == userGroups.getGroupid()){
-                                // dont add
                                 shouldiadd = false;
                                 break;
                             }
@@ -198,9 +197,6 @@ public class GroupsActivity extends AppCompatActivity implements NavigationView.
                                             break;
                                         }else{}
                                     }
-                                    // check if it is in the list already
-
-
                                     // if not in the list
                                     if (shouldiadd2){ // add to the list
                                         mGroups.add(g); }

@@ -271,11 +271,6 @@ public class UserActivity extends AppCompatActivity {
                             .into(showpimage);
                 }
 
-                // load all the other data to the activity
-                //setUserInfo(user);
-
-                // if the shown user is not logged in, dont give ability to edit.
-
                 if (!(fuser.getUid().equals(openUser.getId()))){
                     // if its NOT the logged in user we are opening.
                     editmode.setVisibility(View.INVISIBLE);

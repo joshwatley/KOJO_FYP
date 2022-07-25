@@ -101,13 +101,10 @@ public class CreateGroupActivity extends AppCompatActivity implements UserForGro
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // on back go to group screen
-                startActivity(new Intent(CreateGroupActivity.this, GroupsActivity.class));
-                finish();
-            }
+        toolbar.setNavigationOnClickListener(v -> {
+            // on back go to group screen
+            startActivity(new Intent(CreateGroupActivity.this, GroupsActivity.class));
+            finish();
         });
 
 
@@ -275,7 +272,6 @@ public class CreateGroupActivity extends AppCompatActivity implements UserForGro
                 added = "";
 
                 for (User x : addedUsers){
-                    Log.d("thisisatest", x.getFirstname());
                     added = added + x.getFirstname() + " " +x.getLastname() + ", ";
                 }
                 showAddedUsers.setText(added + " Will be added.");

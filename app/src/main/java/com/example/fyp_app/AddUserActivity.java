@@ -71,7 +71,6 @@ public class AddUserActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(v -> {
-            //get the group details that this task belongs to so you can go back to the inside group for the same group
             Intent intent1 = new Intent(AddUserActivity.this, InsideGroupActivity.class);
             intent1.putExtra("id", groupid);
             startActivity(intent1);
@@ -79,7 +78,6 @@ public class AddUserActivity extends AppCompatActivity {
         });
 
 
-        // load the chip group - with all the users that are NOT IN THE GROUP YET
         DatabaseReference allusers = FirebaseDatabase.getInstance().getReference("Users");
         allusers.addValueEventListener(new ValueEventListener() {
             @Override
@@ -107,7 +105,6 @@ public class AddUserActivity extends AppCompatActivity {
                             }
                         }
 
-                        // you now have 2 lists of the users, and users in the group
 
                         for (String users : allUsers){
                             ingroup = false;
@@ -153,11 +150,6 @@ public class AddUserActivity extends AppCompatActivity {
         });
 
         saveUserChange.setOnClickListener(v -> {
-            //Get a list of the user ids we need to add to the database
-            //to do this - check the checked chips names against the list of all users
-            //and get all the ids to add
-
-            // get a list of names of checked users
             int count = chipGroup.getChildCount();
             for(int i=0;i< count; i++) {
                 Chip child = (Chip) chipGroup.getChildAt(i);
@@ -174,7 +166,6 @@ public class AddUserActivity extends AppCompatActivity {
                 }
             }
 
-            //create a new user group using the current group id and all the ids that we are happy with adding to the database
 
             for (String u2 : userIDStoadd){
                 ref = FirebaseDatabase.getInstance().getReference();

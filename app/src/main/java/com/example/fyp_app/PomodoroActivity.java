@@ -116,9 +116,6 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
         });
 
         start_stop.setOnClickListener(v -> {
-//            ColorDrawable color = (ColorDrawable) start_stop.getBackground();
-//            color.getColor();
-//            System.out.println(color.getColor() + "   " + Color.GREEN);
             if ( ((ColorDrawable) start_stop.getBackground()).getColor() == Color.GREEN){
                 if (start_stop.getText().equals("Start")){
                     clock_state.setText("Break");
@@ -146,12 +143,11 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
                     cdt.start();
                     start_stop.setText("Stop");
 
-                } else if (start_stop.getText().equals("Stop")) {  // if startstop is STOP then we stop time
+                } else if (start_stop.getText().equals("Stop")) {
                     clock_state.setText("Break");
                     try {
                         cdt.cancel();
                     }catch(Exception e) {
-                        //  we dont care if this doesnt work - if theres a countdown we will cancel
                     }
                     start_stop.setText("Start");
                     // we will setup break timer
@@ -193,7 +189,6 @@ public class PomodoroActivity extends AppCompatActivity implements  NavigationVi
                 try {
                     cdt.cancel();
                 }catch(Exception e) {
-                    //  we dont care if this doesnt work - if theres a countdown we will cancel
                 }
                 start_stop.setText("Start");
                 // we will setup break timer

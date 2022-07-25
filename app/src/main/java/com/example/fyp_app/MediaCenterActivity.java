@@ -30,12 +30,6 @@ public class MediaCenterActivity extends AppCompatActivity {
     TextView groupnme;
     EditText ttitle;
 
-    DatabaseReference reference;
-    DatabaseReference ref;
-
-    DatabaseReference blankreference;
-
-    FirebaseDatabase fbinstance;
     DatabaseReference reference2;
 
     Groups currentGroup;
@@ -56,8 +50,6 @@ public class MediaCenterActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 currentGroup = snapshot.getValue(Groups.class);
-                // this is text of the title
-//                groupnme.setText("" + currentGroup.getName());.
             }
 
             @Override
@@ -73,25 +65,3 @@ public class MediaCenterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
-
-//* So this is will be a way for people to upload files
-//things to display:
-//score (uploads this week)
-//other peoples uploads
-//button to upload file
-//
-//So at the top it will have your upload score in the middle
-//
-//Then a list of uploads to this group, and we can have a menu button or something for adding a link
-//
-//
-//
-//Upload link page:
-//
-//Let user set name of upload
-//File - regex for drop box link
-//Store:
-//Name
-//File link
-//Created datetime
-//Name of creator

@@ -285,9 +285,7 @@ public class EditTaskActivity extends AppCompatActivity {
         builder.setMessage("PLEASE CONFIRM YOU WOULD LIKE TO DELETE THE TASK");
         builder.setPositiveButton("Continue",
                 (dialog, which) -> {
-                    // update the database
 
-                    // delete the task from the database,
                     theTId = openTask.getTask_id();
 
                     deltaskref = FirebaseDatabase.getInstance().getReference("Tasks").child(openTask.getTask_id());
@@ -312,7 +310,6 @@ public class EditTaskActivity extends AppCompatActivity {
                             for (DataSnapshot dataSnapshot1 : snapshot.getChildren()){
                                 TaskGroups tg = dataSnapshot1.getValue(TaskGroups.class);
                                 if (tg.getTaskid().equals(openTask.getTask_id())){
-                                    // if the taskgroup in the database contains the open task
                                     dataSnapshot1.getRef().removeValue();
                                 }
                             }

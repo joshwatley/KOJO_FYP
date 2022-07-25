@@ -45,7 +45,6 @@ public class RemoveUserActivity extends AppCompatActivity {
     ArrayList<String> ugroups;
     ArrayList<String> usernames2add;
     ArrayList<String> userIDStoremove;
-    ArrayList<String> idInGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,10 +152,6 @@ public class RemoveUserActivity extends AppCompatActivity {
         });
 
         saveUserChange.setOnClickListener(v -> {
-            //Get a list of the user ids we need to add to the database
-            //to do this - check the checked chips names against the list of all users
-            //and get all the ids to add
-
             // get a list of names of checked users
             int count = chipGroup.getChildCount();
             for(int i=0;i< count; i++) {

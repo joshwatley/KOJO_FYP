@@ -32,8 +32,6 @@ public class EditUsersInGroupActivity extends AppCompatActivity {
 
     ChipGroup chipGroup;
     Button saveUserChange;
-
-    FirebaseDatabase fb;
     DatabaseReference ref;
     FirebaseUser fuser;
 
@@ -49,7 +47,6 @@ public class EditUsersInGroupActivity extends AppCompatActivity {
     ArrayList<String> ugroups;
     ArrayList<String> usernames2add;
     ArrayList<String> userIDStoadd;
-    ArrayList<String> idInGroup;
 
 
     @Override
@@ -179,9 +176,6 @@ public class EditUsersInGroupActivity extends AppCompatActivity {
         saveUserChange.setOnClickListener(v -> {
             Toast.makeText(EditUsersInGroupActivity.this, "Event Fired", Toast.LENGTH_SHORT).show();
 
-             //Get a list of the user ids we need to add to the database
-             //to do this - check the checked chips names against the list of all users
-             //and get all the ids to add
 
             // get a list of names of checked users
             int count = chipGroup.getChildCount();
@@ -202,49 +196,12 @@ public class EditUsersInGroupActivity extends AppCompatActivity {
                 }
             }
 
-            //then go through the database, and remove all the usergroups that are linked to the group atm, except for the one with the fuser.
-
             // get list of user groups to remove
             DatabaseReference changeuser = FirebaseDatabase.getInstance().getReference("UserGroups");
             changeuser.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                    
-//                    for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                        UserGroups userGroups = dataSnapshot.getValue(UserGroups.class);
-//                        // if this is a record with this group
-//                        if (userGroups.getGroupid().equals(groupid)){
-//                            // if this is not referencing the admin/logged in user
-//                            if (!userGroups.getUserid().equals(fuser.getUid())){
-//                                // so now we are dealing with only what we want
-//                                for (String u : userIDStoadd){
-//                                    // check through the ids to add to see what to do with the record.
-//                                    // if the current record is NOT inside userstoadd
-//                                    if (!userGroups.getUserid().equals(u)){
-//                                        whattodo = "delete";
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-                    // TODO SORT THIS OUT
-                    // delete all the usergroups
-//                    for (String ug : ugroups){
-//                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("UserGroups").child(ug);
-//                        ref.addValueEventListener(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                                snapshot.getRef().removeValue();
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError error) {
-//
-//                            }
-//                        });
-//                    }
-                    // so now you need to create new records with these updated list of users
                 }
 
                 @Override

@@ -17,7 +17,6 @@ import com.example.fyp_app.Adapters.UserAdapter;
 import com.example.fyp_app.MainActivity;
 import com.example.fyp_app.Models.Chat;
 import com.example.fyp_app.Models.User;
-import com.example.fyp_app.Notifications.Token;
 import com.example.fyp_app.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

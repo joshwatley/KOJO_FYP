@@ -203,8 +203,6 @@ public class InsideGroupActivity extends AppCompatActivity {
                             (dialog, which) -> {
                                 Toast.makeText(InsideGroupActivity.this, "You've left the group", Toast.LENGTH_SHORT).show();
 
-                                // update the database
-                                // delete the usergroup record where the userid is the current user and the task id is the current group
                                 DatabaseReference leaveref = FirebaseDatabase.getInstance().getReference("UserGroups");
                                 leaveref.addValueEventListener(new ValueEventListener() {
                                     @Override

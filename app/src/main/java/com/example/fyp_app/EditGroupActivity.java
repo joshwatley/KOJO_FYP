@@ -62,7 +62,6 @@ public class EditGroupActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // this is going to get the group data for the group youre about to edit.
                 openGroup = snapshot.getValue(Groups.class);
                 groupname.setText(openGroup.getName());
                 // setting all the data about the group
