@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UserActivity"
-    android:background="@color/lbackground">
+    android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -63,72 +63,73 @@
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:id="@+id/fn"
-        android:textColor="@color/grey"
-        android:layout_marginTop="8dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/chip"
-        android:text="Task Title" />
+
 
     <EditText
         android:id="@+id/showtasktitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fn"
+        android:layout_below="@id/chip"
         android:background="@null"
+        android:layout_marginTop="8dp"
         android:focusable="false"
-        android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
         android:minWidth="50dp"
         android:gravity="center"
         android:text="THIS WILL BE THE TASK TITLE"
-        android:textColor="@color/ltext" />
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/fn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showtasktitle"
+        android:layout_marginTop="-5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/raleway_medium"
+        android:gravity="center"
+        android:text="Task Title"
+        android:textColor="@color/grey" />
 
     <EditText
         android:id="@+id/showtaskcontent"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showtasktitle"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:focusable="false"
+        android:fontFamily="@font/raleway_medium"
         android:gravity="center"
         android:minWidth="50dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/showtasktitle"
-        android:textColor="@color/ltext"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:focusable="false"
-        android:background="@null"
-        android:text="THIS WILL BE THE TASK CONTENT"/>
+        android:text="THIS WILL BE THE TASK CONTENT"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/ln"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
-        android:textColor="@color/grey"
+        android:layout_below="@id/showtaskcontent"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
-        android:layout_below="@id/showtaskcontent"
+        android:gravity="center"
         android:text="Task Content"
-        android:layout_marginLeft="16dp"/>
+        android:textColor="@color/grey" />
+
 
     <EditText
         android:id="@+id/showtaskheading"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:minWidth="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ln"
-        android:textColor="@color/ltext"
-        android:layout_marginLeft="8dp"
-        android:fontFamily="@font/raleway_medium"
         android:layout_marginTop="8dp"
-        android:focusable="false"
         android:background="@null"
-        android:text="THIS WILL BE THE TASK HEADING"/>
+        android:focusable="false"
+        android:fontFamily="@font/raleway_medium"
+        android:gravity="center"
+        android:minWidth="50dp"
+        android:text="THIS WILL BE THE TASK HEADING"
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/he"
@@ -139,23 +140,21 @@
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
         android:layout_below="@id/showtaskheading"
-        android:text="Task Heading"
-        android:layout_marginLeft="16dp"/>
+        android:text="Task Heading" />
 
     <EditText
         android:id="@+id/datedue"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/he"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:focusable="false"
+        android:fontFamily="@font/raleway_medium"
         android:gravity="center"
         android:minWidth="50dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/ltext"
-        android:layout_below="@id/he"
-        android:fontFamily="@font/raleway_medium"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:focusable="false"
-        android:background="@null"
-        android:text="THIS WILL BE THE TASK DUE DATE"/>
+        android:text="THIS WILL BE THE TASK DUE DATE"
+        android:textColor="@color/white" />
 
 
     <TextView
@@ -167,8 +166,7 @@
         android:textColor="@color/grey"
         android:layout_marginTop="-5dp"
         android:fontFamily="@font/raleway_medium"
-        android:text="Task Due Date"
-        android:layout_marginLeft="16dp"/>
+        android:text="Task Due Date" />
 
     <!--    <EditText-->
 <!--        android:id="@+id/allocateduser"-->
@@ -210,17 +208,17 @@
 
     <EditText
         android:id="@+id/trafficpos"
-        android:layout_width="wrap_content"
-        android:minWidth="50dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:fontFamily="@font/raleway_medium"
         android:layout_below="@id/dd"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:focusable="false"
         android:background="@null"
-        android:text="Flag Position: "/>
+        android:focusable="false"
+        android:fontFamily="@font/raleway_medium"
+        android:minWidth="50dp"
+        android:text="Flag Position: "
+        android:textColor="@color/white" />
 
     <Button
         android:layout_width="match_parent"
@@ -274,7 +272,8 @@
 
     <TextView
         android:id="@+id/datecreated"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:fontFamily="@font/raleway_medium"

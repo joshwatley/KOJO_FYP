@@ -36,8 +36,8 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/bar_layout"
         android:id="@+id/fileTitle"
         android:layout_marginTop="8dp"
@@ -49,8 +49,8 @@
         android:textColorHint="@color/white"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="File Title"
         android:id="@+id/ftitle"
         android:layout_below="@id/fileTitle"
@@ -61,8 +61,8 @@
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/ftitle"
         android:id="@+id/fileLink"
         android:layout_marginTop="8dp"
@@ -74,8 +74,8 @@
         android:hint="Enter File Link"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="File Link"
         android:id="@+id/tCont"
         android:layout_below="@id/fileLink"
@@ -86,7 +86,7 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Save File"
         android:id="@+id/btnSaveFile"
         android:fontFamily="@font/raleway_medium"
@@ -99,8 +99,8 @@
         android:background="@drawable/mybutton"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Cancel"
         android:textColor="@color/lightblue"
         android:textSize="12sp"

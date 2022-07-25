@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fyp_app.EditTaskActivity;
+import com.example.fyp_app.LoginActivity;
 import com.example.fyp_app.Models.File;
 import com.example.fyp_app.Models.Task;
 import com.example.fyp_app.R;
@@ -48,8 +50,12 @@ public class FileAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
         holder.f_link.setText(file.getFile_link());
 
         holder.itemView.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
-            currentContext.startActivity(browserIntent);
+            if (file.getFile_link().startsWith("www.dropbox.com") || file.getFile_link().startsWith("https://www.dropbox.com")){
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(file.getFile_link()));
+                currentContext.startActivity(browserIntent);
+            }else{
+                Toast.makeText(currentContext.getApplicationContext(), "No Valid Dropbox Link", Toast.LENGTH_LONG);
+            }
         });
     }
 

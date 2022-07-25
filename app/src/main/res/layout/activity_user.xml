@@ -97,21 +97,22 @@
 
     <EditText
         android:id="@+id/showfirstname"
-        android:layout_width="wrap_content"
-        android:minWidth="50dp"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:layout_below="@id/chip"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:background="@null"
         android:focusable="false"
-        android:text="THIS WILL BE THE FIRSTNAME" />
+        android:fontFamily="@font/raleway_medium"
+        android:minWidth="50dp"
+        android:text="THIS WILL BE THE FIRSTNAME"
+        android:textColor="@color/white" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/fn"
+        android:layout_width="match_parent"
+        android:gravity="center"        android:id="@+id/fn"
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:fontFamily="@font/raleway_medium"
@@ -121,8 +122,8 @@
 
     <EditText
         android:id="@+id/showlastname"
-        android:layout_width="wrap_content"
-        android:minWidth="50dp"
+        android:layout_width="match_parent"
+        android:gravity="center"        android:minWidth="50dp"
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
@@ -135,8 +136,8 @@
 
     <TextView
         android:id="@+id/ln"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"        android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/grey"
         android:layout_below="@id/showlastname"
@@ -145,8 +146,8 @@
 
     <EditText
         android:id="@+id/showemail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"        android:layout_height="wrap_content"
         android:layout_below="@id/ln"
         android:layout_marginLeft="4dp"
         android:fontFamily="@font/raleway_medium"
@@ -158,8 +159,8 @@
 
     <TextView
         android:id="@+id/em"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"        android:layout_height="wrap_content"
         android:fontFamily="@font/raleway_medium"
         android:textColor="@color/grey"
         android:layout_below="@id/showemail"

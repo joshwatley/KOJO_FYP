@@ -37,7 +37,8 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/group_name"
         android:textColor="@color/white"
@@ -51,7 +52,8 @@
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/tgroupname"
         android:text="group name"
@@ -65,7 +67,8 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:id="@+id/group_desc"
         android:layout_below="@+id/tgroupname"
@@ -79,7 +82,8 @@
         />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Group Description"
         android:id="@+id/tgroupdesc"
@@ -90,22 +94,21 @@
         android:layout_below="@id/group_desc" />
 
 
-
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Added Users :"
-        android:textColorHint="@color/white"
         android:id="@+id/showaddedusers"
-        android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/white"
-        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/tgroupdesc"
-        android:layout_marginLeft="8dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/raleway_medium"
+        android:hint="Added Users :"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:id="@+id/search_users"
         android:fontFamily="@font/raleway_medium"
         android:hint="Search..."
@@ -116,8 +119,8 @@
         android:layout_below="@+id/showaddedusers"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Add Users"
         android:id="@+id/tgroupaddusers"
         android:fontFamily="@font/raleway_medium"

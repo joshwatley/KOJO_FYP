@@ -41,7 +41,7 @@
         android:layout_toRightOf="@id/t_img"
         android:fontFamily="@font/raleway_medium"
         android:text="Task Title"
-        android:textColor="@color/ltext"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <TextView

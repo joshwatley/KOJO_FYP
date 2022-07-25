@@ -36,21 +36,21 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/bar_layout"
         android:id="@+id/fileTitle"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
+        android:layout_below="@id/bar_layout"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:background="@null"
-        android:layout_marginLeft="8dp"
         android:fontFamily="@font/raleway_medium"
-        android:textColor="@color/white"
         android:hint="Enter Task Title"
-        android:textColorHint="@color/white"/>
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Task Title"
         android:id="@+id/ftitle"
         android:layout_below="@id/fileTitle"
@@ -61,8 +61,8 @@
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/ftitle"
         android:id="@+id/fileLink"
         android:layout_marginTop="8dp"
@@ -74,8 +74,8 @@
         android:hint="Enter Task Content"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Task Content"
         android:id="@+id/tCont"
         android:layout_below="@id/fileLink"
@@ -85,8 +85,8 @@
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/tCont"
         android:id="@+id/taskHeading"
         android:layout_marginTop="8dp"
@@ -98,8 +98,8 @@
         android:hint="Enter Task Heading"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:text="Task Heading"
         android:id="@+id/theading"
         android:layout_below="@id/taskHeading"
@@ -110,8 +110,8 @@
         />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:hint="Enter Date due"
         android:layout_marginTop="8dp"
         android:id="@+id/tempdateentry"
@@ -122,8 +122,8 @@
         android:textColorHint="@color/white"
         android:background="@null" />
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"          android:layout_height="wrap_content"
         android:layout_below="@id/tempdateentry"
         android:layout_marginLeft="16dp"
         android:textColor="@color/grey"

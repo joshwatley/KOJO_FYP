@@ -36,6 +36,7 @@
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginTop="25dp"
+                android:visibility="invisible"
                 android:clickable="true"
                 android:layout_marginLeft="20dp"
                 android:src="@drawable/ic_mode_edit" />
